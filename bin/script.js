@@ -63,9 +63,6 @@ async function setup() {
 		// Change working directory to the new project folder
 		process.chdir(appPath);
 
-		// delete script
-		fs.rmdirSync(path.join(appPath, 'bin'), { recursive: true });
-
 		// ask for the package name
 		const packageName = (await promptUser(`package name (${folderName}): `)) || folderName;
 
@@ -85,6 +82,13 @@ async function setup() {
 		if (keywoards !== '') {
 			keywoards_arr = keywoards.split(',');
 		}
+
+		// delete script
+		fs.rm(path.join(appPath, 'bin'), { recursive: true }, (error) => {
+            if (error) {
+                console.log('\x1b[31m', error, '\x1b[0m'); // shows errors in red
+            }
+        });
 
 		// Ensure package.json exists before trying to delete it
 		const packageJsonPath = path.join(appPath, 'package.json');
