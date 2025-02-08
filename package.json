@@ -1,8 +1,11 @@
 {
-	"name": "graphql boilerplate",
-	"version": "0.0.0",
+	"name": "graphql-boilerplate",
+	"version": "1.0.0",
 	"author": "Rafael Beltran",
 	"description": "Boilerplate for developing a graphql api",
+	"bin": {
+		"create-graph-api": "./bin/script.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rafabelts/boilerplate-graphql"
