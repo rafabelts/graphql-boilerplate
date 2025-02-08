@@ -1,0 +1,3 @@
+/*
+ * Graphql resolver for authentification
+ */
